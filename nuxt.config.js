@@ -35,7 +35,7 @@ module.exports = {
       }
     }
   },
-  css: ['~/assets/material.icons.css'],
+  css: ['~/assets/material.icons.css', '~/assets/rest.css'],
   plugins: [
     { 
       src: '~/plugins/muse-ui.js',

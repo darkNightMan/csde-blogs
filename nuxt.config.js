@@ -34,13 +34,32 @@ module.exports = {
         })
       }
     }
-  },
+  }, 
   css: ['~/assets/material.icons.css', '~/assets/rest.css'],
   plugins: [
     { 
       src: '~/plugins/muse-ui.js',
       ssr: true
     }
-  ]
+  ],
+  modules: [ 
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy', 
+  ],
+  axios: {
+    proxy: true,
+    prefix: '/api', // baseURL
+    credentials: true,
+  },
+  proxy: {
+    '/api/': {
+      target: 'http://localhost:10086', // 代理地址
+      changeOrigin: true,
+      // secure: false,
+      pathRewrite: {
+        '^/api': ''
+      },
+    },
+  }
 }
 

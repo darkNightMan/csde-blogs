@@ -39,6 +39,14 @@
 <script>
 import Header from '../components/Header'
 export default {
+  // fetch ({ app }) {
+  //   debugger
+  //   console.log(app.$axios)
+  // },
+  async asyncdata ({ app }) {
+    let data = await app.$axios.get('/api/articles/recommenda')
+    console.log(data)
+  },
   components: {
     Header
   },
@@ -65,10 +73,15 @@ export default {
   height: 400px;
   width: 100%;
   margin: 25px 0;
-  // background: #2b333b;
   overflow: hidden;
   // background: url('../assets/images/banner.jpeg');
   background-size: cover;
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  line-height: 400px;
+	background: linear-gradient(135deg,rgba(82, 126, 248, 0.8) 0,rgba(9, 112, 230, 0.8) 100%);
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 }
 .recomend-article-list{

@@ -26,7 +26,7 @@
         <h2>最新文章</h2>
         <ul>
           <li v-for="(item, index) in articlesNes" :key="index">
-            <a>
+            <a href="#">
               <div class="csde-img-blog">
                 <img :src="item.cover_url"/>
               </div>
@@ -146,6 +146,10 @@ export default {
     grid-template-rows: 250px 250px ;
     li{
       margin: 10px;
+      a {
+        width: 100%;   
+        display: block;
+      }
       &:hover{
         h4{
           color: #F20D0D !important;

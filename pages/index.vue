@@ -7,29 +7,36 @@
       <div class="csde-bannder">
           优秀工程师的成长之路就是一条不断打怪升级之路
       </div>
-       
       <div class="container-recommend">
         <h2>推荐文章</h2>
         <div class="recomend-article-list">
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
+          <a href="#" v-for="(item, index) in recommendaList" :key="index">
+            <div class="csde-img-blog">
+               <img :src="item.cover_url"/>
+            </div>
+            <h4>{{item.title}}</h4>
+             <mu-row>
+                <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
+                <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
+             </mu-row>
+          </a>
         </div>
       </div>
-
       <div class="container-article-newlist">
         <h2>最新文章</h2>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li v-for="(item, index) in articlesNes" :key="index">
+            <a>
+              <div class="csde-img-blog">
+                <img :src="item.cover_url"/>
+              </div>
+              <h4>{{item.title}}</h4>
+              <mu-row>
+                  <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
+                  <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
+              </mu-row>
+            </a>  
+          </li>
         </ul>
       </div>
     </mu-container>
@@ -39,20 +46,22 @@
 <script>
 import Header from '../components/Header'
 export default {
-  // fetch ({ app }) {
-  //   debugger
-  //   console.log(app.$axios)
-  // },
-  async asyncdata ({ app }) {
-    let data = await app.$axios.get('/api/articles/recommenda')
-    console.log(data)
+  fetch ({app}) {
+  },
+  async asyncData ({ app }) {
+    const res = await Promise.all([app.$axios.get('/api/articles/recommenda'),app.$axios.get('/api/articles/articlesNew')])
+    return {
+      recommendaList: res[0].data.data,
+      articlesNes: res[1].data.data
+    }
   },
   components: {
     Header
   },
   data () {
     return {
-      active: 0
+      recommendaList: [],
+      articlesNes: []
     };
   }
 }
@@ -74,7 +83,6 @@ export default {
   width: 100%;
   margin: 25px 0;
   overflow: hidden;
-  // background: url('../assets/images/banner.jpeg');
   background-size: cover;
   width: 100%;
   font-size: 32px;
@@ -88,12 +96,46 @@ export default {
   margin: 10px 0px;
   display: flex;
   a{
-    width: 100%;
-    height: 150px;
-    border-radius: 10px;
-    background: #999; // F3F5F3
+    width: 100%;   
     display: block;
     margin: 10px 10px;
+    &:hover{
+      h4{
+         color: #F20D0D !important;
+      }
+    }
+    h4 {
+      color: #07111B;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 24px;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      transition: all .3s;
+      height: 46px;
+    }
+    .csde-img-blog{
+      width: 100%;
+      height: 110px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        border: none;
+      }
+    }
+    span{
+      font-size: 12px;
+      color: #9199A1;
+      line-height: 18px;
+      margin-top: 4px;
+      font-weight: 400;
+    }
   }
 }
 .container-article-newlist{
@@ -103,9 +145,45 @@ export default {
     grid-template-columns: 280px 280px 280px 280px;
     grid-template-rows: 250px 250px ;
     li{
-      background: #999;
-      border-radius: 10px;
       margin: 10px;
+      &:hover{
+        h4{
+          color: #F20D0D !important;
+        }
+      }
+      .csde-img-blog{
+        margin-bottom: 10px;
+        overflow: hidden;
+        border-radius: 10px;
+        height: 140px;
+        img{
+          width: 100%;
+        }
+      }
+      span{
+        font-size: 12px;
+        color: #9199A1;
+        line-height: 18px;
+        margin-top: 4px;
+        font-weight: 400;
+      }
+       h4 {
+        color: #07111B;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        transition: all .3s;
+        height: 46px;
+        &:hover{
+          color: #F20D0D !important;
+        }
+      }
     }
   }
 }

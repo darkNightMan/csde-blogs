@@ -1,50 +1,57 @@
 
 
 <template>
-  <div>
-    <Header></Header>
+  <div >
     <mu-container>
       <div class="csde-bannder">
-          优秀工程师的成长之路就是一条不断打怪升级之路
-      </div>
-      <div class="container-recommend">
-        <h2>推荐文章</h2>
-        <div class="recomend-article-list">
-          <a href="#" v-for="(item, index) in recommendaList" :key="index">
-            <div class="csde-img-blog">
-               <img :src="item.cover_url"/>
-            </div>
-            <h4>{{item.title}}</h4>
-             <mu-row>
-                <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
-                <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
-             </mu-row>
-          </a>
-        </div>
-      </div>
-      <div class="container-article-newlist">
-        <h2>最新文章</h2>
-        <ul>
-          <li v-for="(item, index) in articlesNes" :key="index">
-            <a href="#">
-              <div class="csde-img-blog">
-                <img :src="item.cover_url"/>
-              </div>
-              <h4>{{item.title}}</h4>
-              <mu-row>
-                  <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
-                  <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
-              </mu-row>
-            </a>  
-          </li>
-        </ul>
+        <h2>优秀工程师的成长之路就是一条不断打怪升级之路</h2>
+        <img src="http://bpic.588ku.com/back_pic/05/72/85/815bc165bd81787.jpg%21r850/fw/800" alt="优秀工程师的成长之路就是一条不断打怪升级之路">
       </div>
     </mu-container>
+    <div class="wrap-recommend">
+        <mu-container>
+          <div class="container-recommend">
+            <h2>推荐文章</h2>
+            <div class="recomend-article-list">   
+              <nuxt-link :to="{name: 'articlesDetail', query: {article_id: item.article_id}}"  v-for="(item, index) in recommendaList" :key="index">
+                <div class="csde-img-blog">
+                  <img :src="item.cover_url"/>
+                </div>
+                <h4>{{item.title}}</h4>
+                <mu-row>
+                    <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
+                    <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
+                </mu-row>
+              </nuxt-link>
+            </div>
+          </div>
+       </mu-container>
+    </div>
+    <div class="warp-article-newlist">
+        <mu-container>
+          <div class="container-article-newlist">
+            <h2>最新文章</h2>
+            <ul>
+              <li v-for="(item, index) in articlesNes" :key="index">
+              <nuxt-link :to="{name: 'articlesDetail', query: {article_id: item.article_id}}">
+                  <div class="csde-img-blog">
+                    <img :src="item.cover_url"/>
+                  </div>
+                  <h4>{{item.title}}</h4>
+                  <mu-row>
+                      <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
+                      <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
+                  </mu-row>
+                </nuxt-link>
+              </li>
+            </ul>
+          </div>
+      </mu-container>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from '../components/Header'
 export default {
   fetch ({app}) {
   },
@@ -55,9 +62,6 @@ export default {
       articlesNes: res[1].data.data
     }
   },
-  components: {
-    Header
-  },
   data () {
     return {
       recommendaList: [],
@@ -67,21 +71,12 @@ export default {
 }
 </script>
 <style lang="less">
-.demo-text {
-  padding: 16px;
-  background: #fff;
-  p {
-    margin: 8px 0;
-  }
-}
-.icon-flex-wrap .mu-button {
-  margin: 6px 8px;
-}
 .csde-bannder{
+  position: relative;
   border-radius: 10px;
   height: 400px;
   width: 100%;
-  margin: 25px 0;
+  margin: 80px 0 0px 0;
   overflow: hidden;
   background-size: cover;
   width: 100%;
@@ -91,101 +86,120 @@ export default {
   line-height: 400px;
 	background: linear-gradient(135deg,rgba(82, 126, 248, 0.8) 0,rgba(9, 112, 230, 0.8) 100%);
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  img {
+    width: 100%;
+  }
+  h2 {
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+  }
 }
-.recomend-article-list{
-  margin: 10px 0px;
-  display: flex;
-  a{
-    width: 100%;   
-    display: block;
-    margin: 10px 10px;
-    &:hover{
-      h4{
-         color: #F20D0D !important;
+.wrap-recommend{
+  background: #eee;
+  padding: 20px 0;
+  margin-top: 20px;
+  .container-recommend{
+    .recomend-article-list{
+      margin: 10px 0px;
+      display: flex;
+      a{
+        width: 100%;   
+        display: block;
+        margin: 10px 10px;
+        &:hover{
+          h4{
+            color: #F20D0D !important;
+          }
+        }
+        h4 {
+          color: #07111B;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 24px;
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          transition: all .3s;
+          height: 46px;
+        }
+        .csde-img-blog{
+          width: 100%;
+          height: 110px;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            border: none;
+          }
+        }
+        span{
+          font-size: 12px;
+          color: #9199A1;
+          line-height: 18px;
+          margin-top: 4px;
+          font-weight: 400;
+        }
       }
-    }
-    h4 {
-      color: #07111B;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 24px;
-      word-wrap: break-word;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      transition: all .3s;
-      height: 46px;
-    }
-    .csde-img-blog{
-      width: 100%;
-      height: 110px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      overflow: hidden;
-      img {
-        width: 100%;
-        border: none;
-      }
-    }
-    span{
-      font-size: 12px;
-      color: #9199A1;
-      line-height: 18px;
-      margin-top: 4px;
-      font-weight: 400;
     }
   }
 }
-.container-article-newlist{
-  margin: 10px 0;
-  ul{
-    display: grid;
-    grid-template-columns: 280px 280px 280px 280px;
-    grid-template-rows: 250px 250px ;
-    li{
-      margin: 10px;
-      a {
-        width: 100%;   
-        display: block;
-      }
-      &:hover{
-        h4{
-          color: #F20D0D !important;
+.warp-article-newlist{
+   padding: 20px 0;
+  .container-article-newlist{
+    ul{
+      display: grid;
+      grid-template-columns: 280px 280px 280px 280px;
+      grid-template-rows: 250px 250px ;
+      li{
+        margin: 10px;
+        a {
+          width: 100%;   
+          display: block;
         }
-      }
-      .csde-img-blog{
-        margin-bottom: 10px;
-        overflow: hidden;
-        border-radius: 10px;
-        height: 140px;
-        img{
-          width: 100%;
-        }
-      }
-      span{
-        font-size: 12px;
-        color: #9199A1;
-        line-height: 18px;
-        margin-top: 4px;
-        font-weight: 400;
-      }
-       h4 {
-        color: #07111B;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 24px;
-        word-wrap: break-word;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        transition: all .3s;
-        height: 46px;
         &:hover{
-          color: #F20D0D !important;
+          h4{
+            color: #F20D0D !important;
+          }
+        }
+        .csde-img-blog{
+          margin-bottom: 10px;
+          overflow: hidden;
+          border-radius: 10px;
+          height: 140px;
+          img{
+            width: 100%;
+          }
+        }
+        span{
+          font-size: 12px;
+          color: #9199A1;
+          line-height: 18px;
+          margin-top: 4px;
+          font-weight: 400;
+        }
+        h4 {
+          color: #07111B;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 24px;
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          transition: all .3s;
+          height: 46px;
+          &:hover{
+            color: #F20D0D !important;
+          }
         }
       }
     }

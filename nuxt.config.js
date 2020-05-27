@@ -6,7 +6,7 @@ module.exports = {
     title: 'csde-blogs',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1' },
       { hid: 'description', name: 'description', content: 'blog' }
     ],
     link: [
@@ -16,7 +16,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#2196f3' },
   /*
   ** Build configuration
   */
@@ -35,7 +35,7 @@ module.exports = {
       }
     }
   }, 
-  css: ['~/assets/material.icons.css', '~/assets/rest.css'],
+  css: ['~/assets/material.icons.css', '~/assets/reset.css', '~/assets/blog.icon.css'],
   plugins: [
     { 
       src: '~/plugins/muse-ui.js',
@@ -48,17 +48,17 @@ module.exports = {
   ],
   axios: {
     proxy: true,
-    prefix: '/api', // baseURL
+    // prefix: '/api', // baseURL
     credentials: true,
   },
   proxy: {
     '/api/': {
       target: 'http://localhost:10086', // 代理地址
-      changeOrigin: true,
+      // changeOrigin: true,
       // secure: false,
-      pathRewrite: {
-        '^/api': ''
-      },
+      // pathRewrite: {
+      //   '^/api': ''
+      // },
     },
   }
 }

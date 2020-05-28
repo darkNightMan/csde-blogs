@@ -1,36 +1,39 @@
 <template>
   <div>
     <mu-container class="csde-mu-conteiner">
-        <div class="csde-article-hd">
-          <div class="csde-article-inner">
-             <h3><span class="csde-isTop" v-if="articles.is_top">置顶</span> {{articles.title}}</h3>
-             <p class="csde-tags-bx"><span class="iconfont icontag"></span>  
-               <span style="margin:0 10px"
-                  v-for="item in articles.tagsArr"
-                  :key="item.tags_name"
-                  effect="plain">
-                  {{ item.tags_name }}
-                </span>
+      <div class="csde-article-hd">
+        <div class="csde-article-inner">
+            <h3><span class="csde-isTop" v-if="articles.is_top">置顶</span> {{articles.title}}</h3>
+            <p class="csde-tags-bx"><span class="iconfont icontag"></span>  
+              <span style="margin:0 10px"
+                v-for="item in articles.tagsArr"
+                :key="item.tags_name"
+                effect="plain">
+                {{ item.tags_name }}
+              </span>
+            </p>
+            <div class="csde-article-attr">              
+              <p>
+                <span class="iconfont iconfenlei-"></span> 
+                {{ articles.class_name}}
               </p>
-             <div class="csde-article-attr">              
-                <p>
-                  <span class="iconfont iconfenlei-"></span> 
-                  {{ articles.class_name}}
-                </p>
-                <p><span class="iconfont iconshijian"></span> {{articles.create_time}}</p>
-                <p><span class="iconfont iconliulan"></span> {{articles.read_count}}</p>
-                <p><span class="iconfont iconz-like"></span> {{articles.poll_count}}</p>
-                  <p>作者：{{articles.authorName}}</p>
-             </div>
-          </div>
+              <p><span class="iconfont iconshijian"></span> {{articles.create_time}}</p>
+              <p><span class="iconfont iconliulan"></span> {{articles.read_count}}</p>
+              <p><span class="iconfont iconz-like"></span> {{articles.poll_count}}</p>
+                <p>作者：{{articles.authorName}}</p>
+            </div>
         </div>
-        <div class="csde-article-content">
-          <article   v-highlight v-html="compiledMarked(articles.content)"></article>
-        </div>
+      </div>
+      <div class="csde-article-banner">
+        <img :src="articles.cover_url">
+      </div>
+      <div class="csde-article-content">
+        <article   v-highlight v-html="compiledMarked(articles.content)"></article>
+      </div>
     </mu-container>
     <mu-container>
       <div class="csde-comments-wrap">
-          <h3>评论</h3>
+          <h3>评论 ({{commentsList.count}})</h3>
           <div class="comments-from">
              <mu-form ref="form" :model="validateForm" class="mu-demo-form">
                 <mu-row gutter>
@@ -209,8 +212,15 @@ export default {
     background: #fff;
     padding: 15px;
   }
+  .csde-article-banner{
+    background: #fff;
+    padding: 20px;
+    img{
+      width: 100%;
+    }
+  }
 }
- .csde-comments-wrap{
+.csde-comments-wrap{
     padding: 10px;
     background: #fff;
     margin: 10px 0;

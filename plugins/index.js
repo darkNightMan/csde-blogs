@@ -1,9 +1,11 @@
 import Vue from 'vue';
 import MuseUI from 'muse-ui';
+import Toast from 'muse-ui-toast';
 import NProgress from 'muse-ui-progress';
 import hightLight from '../utils/hightLight'
 import 'muse-ui/dist/muse-ui.css';
 import 'muse-ui-progress/dist/muse-ui-progress.css';
+Vue.use(Toast)
 Vue.use(MuseUI)
 Vue.use(hightLight)
 Vue.use(NProgress, {

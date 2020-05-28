@@ -165,6 +165,11 @@ export default {
         this.$toast.success('评论成功');
       }
       this.$refs.form.clear();
+      this.validateForm = {
+        comment_author: '',
+        comment_content: '',
+        comment_author_email: '',
+      }
       this.initComments()
     },
   }

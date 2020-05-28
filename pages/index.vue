@@ -2,12 +2,15 @@
 
 <template>
   <div >
-    <mu-container>
-      <div class="csde-bannder">
-        <h2>优秀工程师的成长之路就是一条不断打怪升级之路</h2>
-        <img src="http://bpic.588ku.com/back_pic/05/72/85/815bc165bd81787.jpg%21r850/fw/800" alt="优秀工程师的成长之路就是一条不断打怪升级之路">
-      </div>
-    </mu-container>
+    <div class="csde-banner-container">
+      <div class="csde-mask-ct" style="background-image:url(http://bpic.588ku.com/back_pic/05/72/85/815bc165bd81787.jpg%2)"> </div>
+      <mu-container>
+        <div class="csde-bannder">
+          <h2>优秀工程师的成长之路就是一条不断打怪升级之路</h2>
+          <img src="http://bpic.588ku.com/back_pic/05/72/85/815bc165bd81787.jpg%21r850/fw/800" alt="优秀工程师的成长之路就是一条不断打怪升级之路">
+        </div>
+      </mu-container>
+    </div>
     <div class="wrap-recommend">
         <mu-container>
           <div class="container-recommend">
@@ -20,7 +23,7 @@
                 <h4>{{item.title}}</h4>
                 <mu-row>
                     <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
-                    <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
+                    <mu-col span="6"><span> <span class="iconfont iconliulan"></span> {{item.read_count}}</span></mu-col>
                 </mu-row>
               </nuxt-link>
             </div>
@@ -40,7 +43,7 @@
                   <h4>{{item.title}}</h4>
                   <mu-row>
                       <mu-col span="6"><span>分类 {{item.class_name}}</span></mu-col>
-                      <mu-col span="6"><span>浏览 {{item.read_count}}</span></mu-col>
+                      <mu-col span="6"><span><span class="iconfont iconliulan"></span> {{item.read_count}}</span></mu-col>
                   </mu-row>
                 </nuxt-link>
               </li>
@@ -71,12 +74,30 @@ export default {
 }
 </script>
 <style lang="less">
+.csde-banner-container {
+  position: relative;
+  .csde-mask-ct{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: crimson;
+    filter: blur(90px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='90');
+    overflow: hidden;
+    height: 200px;
+    opacity: 0.3;
+    z-index: -1;
+    img {
+      width: 100%;
+    }
+  }
+}
 .csde-bannder{
   position: relative;
   border-radius: 10px;
   height: 400px;
   width: 100%;
-  margin: 80px 0 0px 0;
   overflow: hidden;
   background-size: cover;
   width: 100%;
@@ -123,10 +144,10 @@ export default {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
-          -webkit-line-clamp: 2;
+          -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
           transition: all .3s;
-          height: 46px;
+          height: 24px;
         }
         .csde-img-blog{
           width: 100%;
@@ -193,10 +214,10 @@ export default {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
-          -webkit-line-clamp: 2;
+          -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
           transition: all .3s;
-          height: 46px;
+           height: 24px;
           &:hover{
             color: #F20D0D !important;
           }

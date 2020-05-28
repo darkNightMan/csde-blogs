@@ -38,7 +38,7 @@ module.exports = {
   css: ['~/assets/material.icons.css', '~/assets/reset.css', '~/assets/blog.icon.css'],
   plugins: [
     { 
-      src: '~/plugins/muse-ui.js',
+      src: '~/plugins/index.js',
       ssr: true
     }
   ],

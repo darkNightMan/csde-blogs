@@ -1,6 +1,7 @@
 <template>
-    <header>
-        <mu-appbar style="width: 100%;" color="#fff">
+    <div>
+       <header>
+         <mu-appbar style="width: 100%;" color="#fff">
           <mu-row>
             <mu-col span="8">
               <span class="csde-logo"> CSDE.W</span>
@@ -22,38 +23,40 @@
                         </nuxt-link>
                     </mu-col>
                     <mu-col span="2">
-                        <nuxt-link :to="{path: 'history'}">
+                        <!-- <nuxt-link :to="{path: 'history'}">
                            <span class="csde-nav-m" :class="{ 'active' : $route.path === '/history'}">
                             归档
                           </span>
-                        </nuxt-link>
+                        </nuxt-link> -->
                     </mu-col>
                     <mu-col span="2">
-                        <nuxt-link :to="{path: 'about'}">
+                        <!-- <nuxt-link :to="{path: 'about'}">
                            <span class="csde-nav-m" :class="{ 'active' : $route.path === '/about'}">
                             关于
                           </span>
-                        </nuxt-link>
+                        </nuxt-link> -->
                     </mu-col>
                     <mu-col span="2">
-                         <nuxt-link :to="{path: 'Fdlink'}">
+                         <!-- <nuxt-link :to="{path: 'Fdlink'}">
                            <span class="csde-nav-m" :class="{ 'active' : $route.path === '/Fdlink'}">
                             友链
                           </span>
-                        </nuxt-link>
+                        </nuxt-link> -->
                     </mu-col>
                     <mu-col span="2">
-                        <nuxt-link :to="{path: 'message'}">
+                        <!-- <nuxt-link :to="{path: 'message'}">
                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/message'}">
                             留言
                           </span>
-                        </nuxt-link>
+                        </nuxt-link> -->
                     </mu-col>
                 </mu-row>
             </mu-col>
         </mu-row>
-      </mu-appbar>
-    </header>
+        </mu-appbar>
+      </header>
+      <div class="csde-header-block"></div>
+    </div>
 </template>
 
 <script>
@@ -70,12 +73,15 @@ export default {
 </script>
 
 <style lang="less">
+.csde-header-block{
+  height: 80px;;
+}
 header{
   position: fixed;
   top: 0;
   z-index: 1100;
   .csde-logo{
-    color: #333;
+    color: #1e88e5;
   }
   .header-nav{
     font-size: 14px;

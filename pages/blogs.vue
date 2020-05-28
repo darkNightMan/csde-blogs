@@ -9,9 +9,9 @@
             </div>
             <ul>
               <li v-for="(item, index) in blogList.list" :key="index">
-                <a href="#">
+                <nuxt-link  :to="{name: 'articlesDetail', query: {article_id: item.article_id}}">
                   <img :src="item.cover_url"/>
-                </a>
+                </nuxt-link>
                 <div>
                     <p>
                       <span class="csde-class">分类：</span> 
@@ -136,7 +136,6 @@ export default {
 
 <style lang="less">
 .csde-blogs-wrap{
-  margin-top: 80px;
   .csde-pagination-box{
     padding: 20px 20px 20px 0;
     width: 800px;

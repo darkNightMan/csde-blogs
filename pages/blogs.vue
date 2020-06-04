@@ -134,7 +134,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" >
 .csde-blogs-wrap{
   .csde-pagination-box{
     padding: 20px 20px 20px 0;

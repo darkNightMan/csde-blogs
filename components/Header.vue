@@ -17,7 +17,7 @@
                     </mu-col>
                     <mu-col span="2">
                         <nuxt-link :to="{path: 'blogs'}">
-                          <span class="csde-nav-m" :class="{ 'active' : $route.path === '/blogs'}">
+                          <span class="csde-nav-m" :class="{ 'active' : $route.path === '/blogs' || $route.path === '/articlesDetail'}">
                             博客
                           </span>
                         </nuxt-link>
@@ -37,18 +37,18 @@
                         </nuxt-link> -->
                     </mu-col>
                     <mu-col span="2">
-                         <!-- <nuxt-link :to="{path: 'Fdlink'}">
-                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/Fdlink'}">
+                         <nuxt-link :to="{path: 'relatedLinksList'}">
+                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/relatedLinksList'}">
                             友链
                           </span>
-                        </nuxt-link> -->
+                        </nuxt-link>
                     </mu-col>
                     <mu-col span="2">
-                        <!-- <nuxt-link :to="{path: 'message'}">
+                        <nuxt-link :to="{path: 'message'}">
                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/message'}">
                             留言
                           </span>
-                        </nuxt-link> -->
+                        </nuxt-link>
                     </mu-col>
                 </mu-row>
             </mu-col>

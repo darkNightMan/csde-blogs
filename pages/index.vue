@@ -73,7 +73,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang="less" >
 .csde-banner-container {
   position: relative;
   .csde-mask-ct{

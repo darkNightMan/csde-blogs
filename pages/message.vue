@@ -1,39 +1,17 @@
 <template>
   <div>
-    <mu-container class="csde-mu-conteiner">
-      <div class="csde-article-hd">
-        <div class="csde-article-inner">
-            <h3><span class="csde-isTop" v-if="articles.is_top">置顶</span> {{articles.title}}</h3>
-            <p class="csde-tags-bx"><span class="iconfont icontag"></span>  
-              <span style="margin:0 10px"
-                v-for="item in articles.tagsArr"
-                :key="item.tags_name"
-                effect="plain">
-                {{ item.tags_name }}
-              </span>
-            </p>
-            <div class="csde-article-attr">              
-              <p>
-                <span class="iconfont iconfenlei-"></span> 
-                {{ articles.class_name}}
-              </p>
-              <p><span class="iconfont iconshijian"></span> {{articles.create_time}}</p>
-              <p><span class="iconfont iconliulan"></span> {{articles.read_count}}</p>
-              <p><span class="iconfont iconz-like"></span> {{articles.poll_count}}</p>
-                <p>作者：{{articles.authorName}}</p>
-            </div>
-        </div>
-      </div>
-      <div class="csde-article-banner">
-        <img :src="articles.cover_url">
-      </div>
-      <div class="csde-article-content">
-        <article   v-highlight v-html="compiledMarked(articles.content)"></article>
-      </div>
-    </mu-container>
     <mu-container>
+      <div class="csde-related-hd">
+         <h3>留言板</h3>
+         <div class="csde-related-info">
+            <p>对于不正当留言，会删除处理。</p>
+            <p>1. 欢迎各种留言，技术交流、生活趣事、小说、电影、护肤、以及各种吐槽......</p>
+            <p>2. 忌不正当留言，辱骂、不健康、不文明等危险言论。</p>
+            <p>做社会主义新时代好青年！！！</p>
+         </div>
+       </div>
       <div class="csde-comments-wrap">
-          <h3>评论 ({{commentsList.count}})</h3>
+          <h3>留言 ({{commentsList.count}})</h3>
           <div class="comments-from">
              <mu-form ref="form" :model="validateForm" class="mu-demo-form">
                 <mu-row gutter>
@@ -94,7 +72,7 @@
                         <span v-else class="iconfont icontouxiang-"></span>
                         <div  class="comments-right">
                           <p>
-                            <span>{{child.comment_author}}</span>
+                            <!-- <span>{{child.comment_author}}</span> -->
                             <span  class="comment_time">{{child.comment_time}}</span>
                           </p>
                           <p>{{child.comment_content}}</p>
@@ -124,46 +102,39 @@
 </template>
 
 <script>
-import marked from 'marked'
 export default {
-  async asyncData ({ app, query }) {
-    let article_id = query.article_id
-    const res = await Promise.all([
-      app.$axios.get('/api/articles/detail' ,{ params: { article_id:  article_id}}), 
-      app.$axios.get('/api/articlesComment/list', { params: { article_id: article_id}})
-    ])
+  fetch ({app}) {
+
+  },
+  async asyncData ({ app }) {
+    const res = await app.$axios.get('/api/msgComments/treeLits')
     return {
-      articles: res[0].data.data,
-      commentsList: res[1].data.data,
-      article_id: article_id
+      commentsList: res.data.data
     }
   },
-  data() {
+  data () {
     return {
-      articles: [],
       commentsList: [],
       validateForm: {
         comment_author: '',
         comment_content: '',
         comment_author_email: '',
       }
-    }
+    };
   },
   methods: {
-    compiledMarked() {
-      return marked(this.articles.content ? this.articles.content : '')
-    },
     async initComments() {
-      let { data } = await this.$axios.get('/api/articlesComment/list', { params: { article_id: this.$route.query.article_id}})
+      let { data } = await this.$axios.get('/api/msgComments/treeLits')
       this.commentsList = data.data
     },
     async submitComments () {
-      let formComment = Object.assign(this.validateForm, {article_id: this.$route.query.article_id})
       let result = await this.$refs.form.validate()
       if (!result) return
-      let { data } = await this.$axios.post('/api/articlesComment/create',formComment )
+      let { data } = await this.$axios.post('/api/msgComments/createMsg',this.validateForm )
       if (data.code === 200) {
-        this.$toast.success('评论成功');
+        this.$toast.success('留言成功');
+      } else {
+         this.$toast.error(data.msg);
       }
       this.$refs.form.clear();
       this.validateForm = {
@@ -173,59 +144,26 @@ export default {
       }
       this.initComments()
     },
-  }
+  },
 }
 </script>
 
-<style lang="less" >
-.csde-mu-conteiner{
-  padding: 10px;
-  .csde-article-hd{
-    padding: 0 20px;
-    background: #fff;
-    .csde-isTop{
-      color: crimson;
-      border: 1px solid crimson;
-      padding: 0 2px;
-      border-radius: 4px;
-    }
-    .csde-tags-bx{
-      padding: 6px 0;
-      color: #999;
-    }
-    .csde-article-inner{
-      border-bottom: 1px solid #eee;
-      padding: 15px 0px;
-      h3 {
-        width: 90%;
-      }
-      .csde-article-attr{
-        display: flex;
-        p {
-         margin-right: 10px;
-         width: 100%;
-         color: #999;
-         span {
-           vertical-align: middle;
-         }
-        }
-      }
-    }
-}
-  .csde-article-content{
-    min-height: 500px;
-    width: 100%;
-    background: #fff;
-    padding: 15px;
-  }
-  .csde-article-banner{
-    background: #fff;
+<style lang="less" scoped>
+  .csde-related-hd{
     padding: 20px;
-    img{
-      width: 100%;
+    // margin: 20px;
+    background: #fff;
+    .csde-related-info{
+      border-left: 3px solid #90caf9;
+      background-color: #eee;
+      padding: 20px;
+      margin: 20px 0;
+      p {
+        padding: 6px;
+        color: #2196f3;
+      }
     }
   }
-}
 .csde-comments-wrap{
     padding: 10px;
     background: #fff;
@@ -298,5 +236,4 @@ export default {
       }
     }
   }
-
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <footer></footer>
+  <footer>
+    <p >Copyright © 2020 darkNightMan All Rights Reserved V.XXXX 备案号: 鄂ICP备XXXXXX号</p>
+  </footer>
 </template>
 
 <script>
@@ -10,8 +12,16 @@ export default {
 
 <style lang="less">
 footer{
-  height: 100px;
-  background: #e0e0e0;
+  height: 50px;
+  margin-top: 20px;
+  background: #64b5f6;
   width: 100%;
+  p{
+    text-align: center;
+    font-size: 11px;
+    line-height: 50px;
+    color: #fff;
+    line-height: 50px;
+  }
 }
 </style>

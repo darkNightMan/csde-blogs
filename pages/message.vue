@@ -72,7 +72,8 @@
                         <span v-else class="iconfont icontouxiang-"></span>
                         <div  class="comments-right">
                           <p>
-                            <!-- <span>{{child.comment_author}}</span> -->
+                            <span>{{child.comment_author}} </span>
+                            <span class="csde-isblog" v-if="child.user_id">博主</span>
                             <span  class="comment_time">{{child.comment_time}}</span>
                           </p>
                           <p>{{child.comment_content}}</p>
@@ -115,6 +116,9 @@ export default {
   data () {
     return {
       commentsList: [],
+      commetForms: {
+        comment_content: ''
+      },
       validateForm: {
         comment_author: '',
         comment_content: '',
@@ -185,6 +189,13 @@ export default {
       }
       .comment-list .comments-right {
         padding-left: 10px;
+        .csde-isblog{
+          padding: 0 4px;
+          font-size: 12px;
+          color: #64b5f6;
+          border-radius: 4px;
+          border: 1px solid #64b5f6
+        }
       }
       .comment-list .comment_time{
         font-size: 12px;

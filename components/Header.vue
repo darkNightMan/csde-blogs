@@ -23,11 +23,11 @@
                         </nuxt-link>
                     </mu-col>
                     <mu-col span="2">
-                        <!-- <nuxt-link :to="{path: 'history'}">
+                        <nuxt-link :to="{path: 'history'}">
                            <span class="csde-nav-m" :class="{ 'active' : $route.path === '/history'}">
                             归档
                           </span>
-                        </nuxt-link> -->
+                        </nuxt-link>
                     </mu-col>
                     <mu-col span="2">
                         <!-- <nuxt-link :to="{path: 'about'}">

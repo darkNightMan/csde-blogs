@@ -40,6 +40,16 @@ module.exports = {
     { 
       src: '~/plugins/index.js',
       ssr: true
+    },
+    {
+      src: '~/assets/blog.less',
+      ssr: true,
+      lang: 'less'
+    },
+    {
+      src: '~/assets/responsive.less',
+      ssr: true,
+      lang: 'less'
     }
   ],
   modules: [ 

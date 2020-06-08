@@ -4,7 +4,9 @@
          <mu-appbar style="width: 100%;" color="#fff">
           <mu-row>
             <mu-col span="8">
-              <span class="csde-logo"> CSDE.W</span>
+              <nuxt-link to="/">
+                <span class="csde-logo"> CSDE.W</span>
+              </nuxt-link>
             </mu-col>
             <mu-col span="4">
                 <mu-row class="header-nav">

@@ -68,7 +68,7 @@
               </mu-list-item-title>
             </mu-list-item>
 
-            <mu-list-item button :to="{path: 'blogs'}">
+            <mu-list-item button :to="{path: 'blogs'}" @click="open= false">
               <mu-list-item-title >
                   <span class="csde-nav-m" :class="{ 'active' : $route.path === '/blogs' || $route.path === '/articlesDetail'}">
                     博客
@@ -76,7 +76,7 @@
               </mu-list-item-title>
             </mu-list-item>
 
-           <mu-list-item button :to="{path: 'archives'}">
+           <mu-list-item button :to="{path: 'archives'}" @click="open= false">
               <mu-list-item-title>
                   <span class="csde-nav-m" :class="{ 'active' : $route.path === '/archives'}">
                     归档
@@ -84,14 +84,14 @@
               </mu-list-item-title>
             </mu-list-item>
            
-            <mu-list-item button :to="{path: 'relatedLinksList'}">
+            <mu-list-item button :to="{path: 'relatedLinksList'}" @click="open= false">
               <mu-list-item-title>
                   <span class="csde-nav-m" :class="{ 'active' : $route.path === '/relatedLinksList'}">
                     友链
                   </span>
               </mu-list-item-title>
             </mu-list-item>
-             <mu-list-item button :to="{path: 'message'}">
+             <mu-list-item button :to="{path: 'message'}" @click="open= false">
               <mu-list-item-title>
                   <span class="csde-nav-m" :class="{ 'active' : $route.path === '/message'}">
                     留言

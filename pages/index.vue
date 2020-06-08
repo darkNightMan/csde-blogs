@@ -7,7 +7,7 @@
       <mu-container>
         <div class="csde-bannder">
           <h2>优秀工程师的成长之路就是一条不断打怪升级之路</h2>
-          <img src="http://bpic.588ku.com/back_pic/05/72/85/815bc165bd81787.jpg%21r850/fw/800" alt="优秀工程师的成长之路就是一条不断打怪升级之路">
+          <!-- <img src="http://bpic.588ku.com/back_pic/05/72/85/815bc165bd81787.jpg%21r850/fw/800" alt="优秀工程师的成长之路就是一条不断打怪升级之路"> -->
         </div>
       </mu-container>
     </div>

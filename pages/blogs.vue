@@ -23,7 +23,7 @@
                       </p>
                       <p class="csde-tags-p"> 
                         <span class="iconfont icontag"></span>
-                        <span class="tags-list" v-for="(it, index) in item.tagsArr" :key="index">
+                        <span class="tags-list" v-for="(it, index) in item.tagsArr" :key="index" style="margin:0 4px; background:#eee; padding:2px 4px; border-radius:4px">
                           {{it.tags_name}}
                         </span>
                       </p>

@@ -5,7 +5,7 @@
         <div class="csde-article-inner">
             <h3><span class="csde-isTop" v-if="articles.is_top">置顶</span> {{articles.title}}</h3>
             <p class="csde-tags-bx"><span class="iconfont icontag"></span>  
-              <span style="margin:0 10px"
+              <span style="margin:0 4px; background:#eee; padding:2px 4px; border-radius:4px"
                 v-for="item in articles.tagsArr"
                 :key="item.tags_name"
                 effect="plain">
@@ -19,7 +19,7 @@
               </p>
               <p><span class="iconfont iconshijian"></span> {{articles.create_time}}</p>
               <p><span class="iconfont iconliulan"></span> {{articles.read_count}}</p>
-              <p><span class="iconfont iconz-like"></span> {{articles.poll_count}}</p>
+              <!-- <p><span class="iconfont iconz-like"></span> {{articles.poll_count}}</p> -->
                 <p>作者：{{articles.authorName}}</p>
             </div>
         </div>

@@ -29,7 +29,7 @@
                       </p>
                       <p class="csde-cloume-attr">
                         <span class="csde-icons"><span class="iconfont iconliulan"></span> {{item.read_count}} </span>
-                        <span class="csde-icons"><span class="iconfont iconjianyi"></span>{{item.comments.length}} </span>
+                        <span class="csde-icons"><span class="iconfont iconjianyi"></span>{{item.comments.length}}</span>
                         <!-- <span class="csde-icons"><span class="iconfont iconz-like"></span>  {{item.poll_count}}</span> -->
                       </p>
                   </div>

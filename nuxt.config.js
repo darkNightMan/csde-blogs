@@ -7,7 +7,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1' },
-      { hid: 'description', name: 'description', content: 'blog' }
+      { hid: 'description', name: 'keywords', content: 'csde,javaScript,html,css,Vue.js,React.js,mongodb,node.js,express,前端技术分享,前端技术交流,资源分享' },
+      { hid: 'keywords', name: 'description', content: '欢迎各位光临本站！本站旨在：前端技术分享，前端技术交流，个人经验分享，资源分享' }
+    ],
+    script: [
+      { src: '/js/rem.js', type: 'text/javascript', charset: 'utf-8'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -33,7 +37,13 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    // postcss:[
+    //   require("postcss-px2rem")({
+    //     remUnit: 60
+    //   })
+    //   // require('autoprefixer')
+    // ],
   }, 
   css: ['~/assets/material.icons.css', '~/assets/reset.css', '~/assets/blog.icon.css'],
   plugins: [
@@ -63,7 +73,7 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      target: 'http://106.54.63.174', // 代理地址
+      target: 'http://127.0.0.1:10086', // 代理地址
       // changeOrigin: true,
       // secure: false,
       // pathRewrite: {

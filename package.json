@@ -20,7 +20,8 @@
     "muse-ui": "^3.0.2",
     "muse-ui-progress": "^0.1.0",
     "muse-ui-toast": "^0.3.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "postcss-px2rem": "^0.3.0"
   },
   "config": {
     "nuxt": {

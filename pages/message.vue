@@ -1,7 +1,7 @@
 <template>
   <div>
     <mu-container>
-      <div class="csde-related-hd">
+      <div class="csde-msg-hd">
          <h3>留言板</h3>
          <div class="csde-related-info">
             <p>对于不正当留言，会删除处理。</p>

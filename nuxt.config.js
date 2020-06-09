@@ -63,7 +63,7 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      target: 'http://localhost:10086', // 代理地址
+      target: 'http://106.54.63.174', // 代理地址
       // changeOrigin: true,
       // secure: false,
       // pathRewrite: {

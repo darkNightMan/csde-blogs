@@ -32,13 +32,6 @@
                         </nuxt-link>
                     </mu-col>
                     <mu-col span="2">
-                        <!-- <nuxt-link :to="{path: 'about'}">
-                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/about'}">
-                            关于
-                          </span>
-                        </nuxt-link> -->
-                    </mu-col>
-                    <mu-col span="2">
                          <nuxt-link :to="{path: 'relatedLinksList'}">
                            <span class="csde-nav-m" :class="{ 'active' : $route.path === '/relatedLinksList'}">
                             友链
@@ -49,6 +42,13 @@
                         <nuxt-link :to="{path: 'message'}">
                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/message'}">
                             留言
+                          </span>
+                        </nuxt-link>
+                    </mu-col>
+                     <mu-col span="2">
+                        <nuxt-link :to="{path: 'about'}">
+                           <span class="csde-nav-m" :class="{ 'active' : $route.path === '/about'}">
+                            关于
                           </span>
                         </nuxt-link>
                     </mu-col>

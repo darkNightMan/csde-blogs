@@ -3,6 +3,9 @@
     <Header></Header>
     <nuxt/>
     <Footer></Footer>
+    <mu-button  v-show="isShow" class="csde-backTop-btn" fab small color="primary" @click="backtop" >
+      <mu-icon value="navigation"></mu-icon>
+    </mu-button>
   </div>
 </template>
 <script>
@@ -13,6 +16,37 @@ export default {
     Header,
     Footer
   },
+  data() {
+    return {
+      isShow: false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.winScroll, true)
+  },
+  methods: {
+    winScroll (e) {
+      this.$nextTick(() => {
+        let top = document.body.scrollTop || document.documentElement.scrollTop || window.pageXOffset
+        if (top > 100) {
+          this.isShow = true
+        } else {
+          this.isShow = false
+        }
+      })
+    },
+    backtop (){
+      let timer = setInterval(function(){
+        let osTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let ispeed = Math.floor(-osTop / 5); 
+        document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;
+        this.isTop = true;
+        if(osTop === 0){
+          clearInterval(timer);
+        }
+      },30)
+    }
+  }
 }
 </script>
 <style>
@@ -25,6 +59,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+.csde-backTop-btn{
+  position: fixed !important;
+  right: 20px;
+  bottom:60px;
 }
 
 *, *:before, *:after {

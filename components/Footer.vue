@@ -1,12 +1,19 @@
 <template>
-  <footer>
-    <p >Copyright © 2020 darkNightMan All Rights Reserved V.XXXX 备案号: 鄂ICP备XXXXXX号</p>
-  </footer>
+  <div>
+      <footer>
+        <p >Copyright © 2020 darkNightMan All Rights Reserved V.XXXX 备案号: 鄂ICP备XXXXXX号</p>
+      </footer>
+  </div>
+ 
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      
+    }
+  }
 }
 </script>
 

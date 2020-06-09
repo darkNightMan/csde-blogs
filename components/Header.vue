@@ -3,12 +3,12 @@
        <header>
          <mu-appbar style="width: 100%;" color="#fff">
           <mu-row>
-            <mu-col span="8">
+            <mu-col span="9">
               <nuxt-link to="/">
                 <span class="csde-logo"> CSDE.W</span>
               </nuxt-link>
             </mu-col>
-            <mu-col span="4">
+            <mu-col span="3">
                 <mu-row class="header-nav">
                     <mu-col span="2">
                         <nuxt-link to="/">

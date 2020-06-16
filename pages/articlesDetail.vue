@@ -176,3 +176,9 @@ export default {
   }
 }
 </script>
+
+<style >
+.csde-article-content img{
+  width: 100% !important; 
+}
+</style>

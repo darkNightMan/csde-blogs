@@ -6,8 +6,8 @@
          <p>交换友链可在留言板留言，同时请将本站加入友链  本站友链信息如下：</p>
          <div class="csde-related-info">
             <p>名称 : darkNightMan</p>
-            <p>网址: http://www.baidu.com</p>
-            <p>图标: https://uploadfile.huiyi8.com/up/25/70/a1/2570a194efbc9fcd2ac7f94530dfe482.jpg</p>
+            <p>网址: http://www.csde.club</p>
+            <p>图标: http://www.csde.club/public/uploads/csde_1592474924000.jpeg</p>
             <p>描述: 假如生活欺骗了你不要悲伤不要心急</p>
          </div>
        </div>

@@ -93,10 +93,17 @@
                   </span>
               </mu-list-item-title>
             </mu-list-item>
-             <mu-list-item button :to="{path: 'message'}" @click="open= false">
+            <mu-list-item button :to="{path: 'message'}" @click="open= false">
               <mu-list-item-title>
                   <span class="csde-nav-m" :class="{ 'active' : $route.path === '/message'}">
                     留言
+                  </span>
+              </mu-list-item-title>
+            </mu-list-item> 
+             <mu-list-item button :to="{path: 'about'}" @click="open= false">
+              <mu-list-item-title>
+                  <span class="csde-nav-m" :class="{ 'active' : $route.path === '/about'}">
+                    关于
                   </span>
               </mu-list-item-title>
             </mu-list-item> 

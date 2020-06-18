@@ -2,7 +2,7 @@
   <div>
     <mu-container>
       <div class="csde-msg-hd">
-         <h3>留言板</h3>
+         <h2>留言板</h2>
          <div class="csde-related-info">
             <p>对于不正当留言，会删除处理。</p>
             <p>1. 欢迎各种留言，技术交流、生活趣事、小说、电影、护肤、以及各种吐槽......</p>

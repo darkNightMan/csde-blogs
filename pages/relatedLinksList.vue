@@ -2,7 +2,7 @@
   <div>
      <mu-container>
        <div class="csde-related-hd">
-         <h3>链接申请说明</h3>
+         <h2>链接申请说明</h2>
          <p>交换友链可在留言板留言，同时请将本站加入友链  本站友链信息如下：</p>
          <div class="csde-related-info">
             <p>名称 : darkNightMan</p>

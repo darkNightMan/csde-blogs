@@ -7,6 +7,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1' },
+      { name: 'baidu-site-verification', content: 'SBNQrBfdNm' },
       { hid: 'description', name: 'keywords', content: 'csde,javaScript,html,css,Vue.js,React.js,mongodb,node.js,express,前端技术分享,前端技术交流,资源分享' },
       { hid: 'keywords', name: 'description', content: '欢迎各位光临本站！本站旨在：前端技术分享，前端技术交流，个人经验分享，资源分享' }
     ],

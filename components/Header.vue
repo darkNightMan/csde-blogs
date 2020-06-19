@@ -64,7 +64,7 @@
           <mu-list>
             <mu-list-item button  to="/">
               <mu-list-item-title>
-                  <span class="csde-nav-m" :class="{ 'active' : $route.path === '/'}">
+                  <span class="csde-nav-m" :class="{ 'active' : $route.path === '/'}" @click="open= false"> 
                     首页
                   </span>
               </mu-list-item-title>

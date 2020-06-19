@@ -1,7 +1,7 @@
 <template>
   <div>
       <footer>
-        <p >Copyright © 2020 darkNightMan Pro 黔ICP备20005477号 </p>
+        <p >Copyright © 2020 darkNightMan All Rights Reserved  Pro 黔ICP备20005477号 </p>
       </footer>
   </div>
 </template>

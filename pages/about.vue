@@ -27,33 +27,10 @@
             <img src="../assets/images/admin/5.png"/>
           </div>
           <h2>源码下载</h2> 
-          <div class="csde-source-warpper clearfix">
               <div class="csde-card-item">
-                 <h3>node-rbac</h3>
-                 <p>本站所有后台源码</p>
-                 <p> <a href="https://github.com/darkNightMan/node-rbac.git">项目地址 </a> </p>
+                  <h3>需要源码请联系</h3>
+                  <p>联系方式: 39604192@qq.com</p>
               </div>
-              <div class="csde-card-item">
-                  <h3>csde-admin-vue</h3>
-                  <p>前端后台系统界面...</p>
-                   <p> <a href="https://github.com/darkNightMan/csde-admin-vue.git">项目地址 </a> </p>
-              </div>
-              <div class="csde-card-item">
-                  <h3>csde-blogs</h3>
-                  <p>前台blog页面</p>
-                   <p> <a href="https://github.com/darkNightMan/csde-blogs.git">项目地址 </a> </p>
-              </div>
-               <div class="csde-card-item">
-                  <h3>node-rbac-sql</h3>
-                  <p>此版本为为sql原生查询 没有使用 mysql orm框架</p>
-                   <p> <a href="https://github.com/darkNightMan/node-rbac-sql.git">项目地址 </a> </p>
-              </div>
-              <div class="csde-card-item">
-                  <h3>csde-rbac-node</h3>
-                  <p>此版本为没有加入博客管理模块</p>
-                   <p> <a href="https://gitee.com/BlockShow/csde-rbac-node.git">项目地址 </a> </p>
-              </div>
-          </div>
           <div class="csde-appreciation">
               <span class="csde-appre-btn">赏
                   <div class="csde-qr-code">

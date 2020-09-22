@@ -129,6 +129,7 @@ export default {
   methods: {
     async initComments() {
       let { data } = await this.$axios.get('/api/msgComments/treeLits')
+      debugger
       this.commentsList = data.data
     },
     async submitComments () {

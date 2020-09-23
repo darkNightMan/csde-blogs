@@ -61,7 +61,8 @@ module.exports = {
       src: '~/assets/responsive.less',
       ssr: true,
       lang: 'less'
-    }
+    },
+    '@/plugins/axios'
   ],
   modules: [ 
     '@nuxtjs/axios',
